@@ -5,6 +5,7 @@
  */
 package data;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 
@@ -22,7 +23,7 @@ public class ClienteData {
     private Integer id;
     private String celular;
     private String cep;
-    private Date datan;
+    private Timestamp datan;
     private String cidade;
     private String estado;
     private String nomet;
@@ -93,11 +94,11 @@ public class ClienteData {
         this.cep = cep;
     }
 
-    public Date getDatan() {
+    public Timestamp getDatan() {
         return datan;
     }
 
-    public void setDatan(Date datan) {
+    public void setDatan(Timestamp datan) {
         this.datan = datan;
     }
 

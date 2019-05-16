@@ -24,7 +24,7 @@ public class ClienteDAO {
         try {
             Connection connection = new ConnectionFactory().getConnection();
 
-            String sqlCliente = "INSERT INTO `cliente`(`nome`, `cpf`, `email`, `endereco`, `cep`, `telefone`, `celular`) VALUES (?,?,?,?,?,?,?)";
+            String sqlCliente = "INSERT INTO `cliente`(`nome`, `cpf`, `email`, `endereco`, `cep`, `telefone`, `celular`, 'cidade', 'estado', 'nometitular', 'numerocartao', 'senha', 'datanascimento') VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmtCliente = connection.prepareStatement(sqlCliente);
             pstmtCliente.setString(1, c.getNome());
             pstmtCliente.setString(2, c.getCpf());
@@ -38,6 +38,7 @@ public class ClienteDAO {
             pstmtCliente.setString(10, c.getNomet());
             pstmtCliente.setString(11, c.getNumeroc());
             pstmtCliente.setString(12, c.getSenha());
+            pstmtCliente.setTimestamp(13, c.getDatan());
             int deuCertoSQL = pstmtCliente.executeUpdate();
 
             if (deuCertoSQL == 1) {
@@ -60,7 +61,7 @@ public class ClienteDAO {
         try {
             Connection connection = new ConnectionFactory().getConnection();
 
-            String sqlCliente = "UPDATE `cliente` SET `nome`=?, `cpf`=?, `email`=?, `endereco`=?, `cep`=?, `telefone`=?, `celular`=? WHERE `id`=?";
+            String sqlCliente = "UPDATE `cliente` SET `nome`=?, `cpf`=?, `email`=?, `endereco`=?, `cep`=?, `telefone`=?, `celular`=?, 'cidade'=?, 'estado'=?, 'nometitular'=?, 'numerocartao'=?, 'senha'=? WHERE `id`=?";
             PreparedStatement pstmtCliente = connection.prepareStatement(sqlCliente);
             pstmtCliente.setString(1, c.getNome());
             pstmtCliente.setString(2, c.getCpf());

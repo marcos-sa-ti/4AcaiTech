@@ -24,18 +24,14 @@ public class ProdutoDAO {
         try {
             Connection connection = new ConnectionFactory().getConnection();
 
-            String sqlProduto = "INSERT INTO `produto`(`nome`, `categoria`, `plataforma`, `fornecedor`, `descricao`, `preco_compra`, `preco_venda`, `ano_lancamento`, `estoque`, `dt_cadastro`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            String sqlProduto = "INSERT INTO `produto`(`nome`, `categoria`, `descricao`, 'preco', `ano_lancamento`, `quantidade`) VALUES (?,?,?,?,?,?)";
             PreparedStatement pstmtProduto = connection.prepareStatement(sqlProduto);
             pstmtProduto.setString(1, p.getNome());
             pstmtProduto.setInt(2, p.getCategoria());
-            pstmtProduto.setString(3, p.getPlataforma());
-            pstmtProduto.setString(4, p.getFornecedor());
-            pstmtProduto.setString(5, p.getDescricao());
-            pstmtProduto.setInt(6, p.getPrecoDeCusto());
-            pstmtProduto.setInt(7, p.getPrecoDeVenda());
-            pstmtProduto.setInt(8, p.getAnoLancamento());
-            pstmtProduto.setInt(9, p.getEstoque());
-            pstmtProduto.setTimestamp(10, p.getDataCadastro());
+            pstmtProduto.setString(3, p.getDescricao());
+            pstmtProduto.setInt(4, p.getPreco());
+            pstmtProduto.setInt(5, p.getAnoLancamento());
+            pstmtProduto.setInt(6, p.getQuantidade());
             int deuCertoSQL = pstmtProduto.executeUpdate();
 
             if (deuCertoSQL == 1) {
@@ -64,15 +60,10 @@ public class ProdutoDAO {
                 p.setId(rs.getInt("ID"));
                 p.setNome(rs.getString("NOME"));
                 p.setDescricao(rs.getString("DESCRICAO"));
-                p.setPrecoDeCusto(rs.getInt("PRECO_COMPRA"));
-                p.setPrecoDeVenda(rs.getInt("PRECO_VENDA"));
-                p.setEstoque(rs.getInt("ESTOQUE"));
-                p.setDataCadastro(rs.getTimestamp("DT_CADASTRO"));
+                p.setPreco(rs.getInt("PRECO"));
+                p.setQuantidade(rs.getInt("QUANTIDADE"));
                 p.setCategoria(rs.getInt("CATEGORIA"));
                 p.setAnoLancamento(rs.getInt("ANO_LANCAMENTO"));
-                p.setFornecedor(rs.getString("FORNECEDOR"));
-
-                p.setPlataforma(rs.getString("PLATAFORMA"));
                 listaProdutos.add(p);
 
             }
@@ -98,14 +89,10 @@ public class ProdutoDAO {
                 p.setId(rs.getInt("ID"));
                 p.setNome(rs.getString("NOME"));
                 p.setDescricao(rs.getString("DESCRICAO"));
-                p.setPrecoDeCusto(rs.getInt("PRECO_COMPRA"));
-                p.setPrecoDeVenda(rs.getInt("PRECO_VENDA"));
-                p.setEstoque(rs.getInt("ESTOQUE"));
-                p.setDataCadastro(rs.getTimestamp("DT_CADASTRO"));
+                p.setPreco(rs.getInt("PRECO"));
+                p.setQuantidade(rs.getInt("QUANTIDADE"));
                 p.setCategoria(rs.getInt("CATEGORIA"));
                 p.setAnoLancamento(rs.getInt("ANO_LANCAMENTO"));
-                p.setFornecedor(rs.getString("FORNECEDOR"));
-                p.setPlataforma(rs.getString("PLATAFORMA"));
 
                 listaProdutos.add(p);
 
@@ -130,6 +117,8 @@ public class ProdutoDAO {
                 p.setId(rs.getInt("ID"));
                 p.setNome(rs.getString("NOME"));
                 p.setDescricao(rs.getString("DESCRICAO"));
+                p.setPreco(rs.getInt("PRECO"));
+                p.setQuantidade(rs.getInt("QUANTIDADE"));
                 p.setCategoria(rs.getInt("CATEGORIA"));
                 p.setAnoLancamento(rs.getInt("ANO_LANCAMENTO"));
                
@@ -148,18 +137,15 @@ public class ProdutoDAO {
             Connection connection;
             connection = new ConnectionFactory().getConnection();
 
-            String altProduto = "UPDATE `produto` SET `nome`=?,`categoria`=?,`plataforma`=?,`fornecedor`=?,`descricao`=?,`preco_compra`=?,`preco_venda`=?,`ano_lancamento`=?,`estoque`=? WHERE `id`= ?";
+            String altProduto = "UPDATE `produto` SET `nome`=?,`categoria`=?,`descricao`=?,`preco`=?,`ano_lancamento`=?,`quantidade`=? WHERE `id`= ?";
             PreparedStatement pstmtProduto = connection.prepareStatement(altProduto);
             pstmtProduto.setString(1, p.getNome());
             pstmtProduto.setInt(2, p.getCategoria());
-            pstmtProduto.setString(3, p.getPlataforma());
-            pstmtProduto.setString(4, p.getFornecedor());
-            pstmtProduto.setString(5, p.getDescricao());
-            pstmtProduto.setInt(6, p.getPrecoDeCusto());
-            pstmtProduto.setInt(7, p.getPrecoDeVenda());
-            pstmtProduto.setInt(8, p.getAnoLancamento());
-            pstmtProduto.setInt(9, p.getEstoque());
-            pstmtProduto.setInt(10, p.getId());
+            pstmtProduto.setString(3, p.getDescricao());
+            pstmtProduto.setInt(4, p.getPreco());
+            pstmtProduto.setInt(5, p.getAnoLancamento());
+            pstmtProduto.setInt(6, p.getQuantidade());
+            pstmtProduto.setInt(7, p.getId());
 
             int deuCertoSQL = pstmtProduto.executeUpdate();
 

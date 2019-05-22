@@ -63,7 +63,7 @@ public class cadastrarCliente extends HttpServlet{
             MensagemDeRetorno = "Houve um erro ao cadastrar o cliente: '" + request.getParameter("nomeCliente") + "'.";
         }
         request.setAttribute("retornoMensagem", MensagemDeRetorno);
-        request.getRequestDispatcher("view/cadastrarCliente.jsp").forward(request, response);
+        request.getRequestDispatcher("login.html").forward(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(cadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
         }

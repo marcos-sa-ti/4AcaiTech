@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package connection;
 
 import java.sql.Connection;
@@ -19,8 +14,8 @@ public class ConnectionFactory {
             Connection connection = null;
             String driverName = "com.mysql.jdbc.Driver";
             Class.forName(driverName);
-            String nomeBD = "lojadegames";
-            String url = "jdbc:mysql://localhost:3306/" + nomeBD + "?zeroDateTimeBehavior=convertToNull";
+            String nomeBD = "ecommerceacaitech";
+            String url = "jdbc:mysql://localhost:3307/" + nomeBD + "?zeroDateTimeBehavior=convertToNull";
             String username = "root";
             String password = "";
             connection = DriverManager.getConnection(url, username, password);

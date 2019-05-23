@@ -37,8 +37,6 @@ public class alterarCliente {
         c.setCep(request.getParameter("cepCliente"));
 
         c.setTelefone(request.getParameter("telefone"));
-
-        c.setCelular(request.getParameter("celular"));
         
         c.setCidade(request.getParameter("cidade"));
         

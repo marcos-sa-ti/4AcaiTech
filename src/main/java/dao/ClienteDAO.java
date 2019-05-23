@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import connection.ConnectionFactory;
 import data.ClienteData;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,21 +20,24 @@ public class ClienteDAO {
         try {
             Connection connection = new ConnectionFactory().getConnection();
 
-            String sqlCliente = "INSERT INTO `cliente`(`nome`, `cpf`, `email`, `endereco`, `cep`, `telefone`, `celular`, 'cidade', 'estado', 'nometitular', 'numerocartao', 'senha', 'datanascimento') VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sqlCliente = "INSERT INTO `cliente`(`nome`, `cpf`, `email`, `endereco`,`complemento`,`numerocasa`, `cep`, `telefone`, 'cidade', 'estado', 'nomet', 'numeroc', 'senha',`codsegcartao`, 'datanascimento') VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmtCliente = connection.prepareStatement(sqlCliente);
             pstmtCliente.setString(1, c.getNome());
             pstmtCliente.setString(2, c.getCpf());
-            pstmtCliente.setString(3, c.getEmail());
-            pstmtCliente.setString(4, c.getEndereco());
-            pstmtCliente.setString(5, c.getCep());
+            pstmtCliente.setString(13,c.getDatan());
             pstmtCliente.setString(6, c.getTelefone());
-            pstmtCliente.setString(7, c.getCelular());
+            pstmtCliente.setString(4, c.getEndereco());
+            pstmtCliente.setString(14, c.getComplemento());
+            pstmtCliente.setString(5, c.getCep());
+            pstmtCliente.setString(15, c.getNumerocasa());
             pstmtCliente.setString(8, c.getCidade());
             pstmtCliente.setString(9, c.getEstado());
             pstmtCliente.setString(10, c.getNomet());
             pstmtCliente.setString(11, c.getNumeroc());
+            pstmtCliente.setString(16, c.getCodsegcartao());
+            pstmtCliente.setString(3, c.getEmail());
             pstmtCliente.setString(12, c.getSenha());
-            pstmtCliente.setTimestamp(13, c.getDatan());
+            
             int deuCertoSQL = pstmtCliente.executeUpdate();
 
             if (deuCertoSQL == 1) {
@@ -69,7 +68,6 @@ public class ClienteDAO {
             pstmtCliente.setString(4, c.getEndereco());
             pstmtCliente.setString(5, c.getCep());
             pstmtCliente.setString(6, c.getTelefone());
-            pstmtCliente.setString(7, c.getCelular());
             pstmtCliente.setString(8, c.getCidade());
             pstmtCliente.setString(9, c.getEstado());
             pstmtCliente.setString(10, c.getNomet());
@@ -104,7 +102,6 @@ public class ClienteDAO {
                 ClienteData c = new ClienteData();
                 c.setId(rs.getInt("ID"));
                 c.setNome(rs.getString("NOME"));
-                c.setCelular(rs.getString("CELULAR"));
                 c.setCep(rs.getString("CEP"));
                 c.setCpf((rs.getString("CPF")));
                 c.setEmail(rs.getString("EMAIL"));
@@ -137,7 +134,6 @@ public class ClienteDAO {
                 ClienteData c = new ClienteData();
                 c.setId(rs.getInt("ID"));
                 c.setNome(rs.getString("NOME"));
-                c.setCelular(rs.getString("CELULAR"));
                 c.setCep(rs.getString("CEP"));
                 c.setCpf((rs.getString("CPF")));
                 c.setEmail(rs.getString("EMAIL"));
@@ -170,7 +166,6 @@ public class ClienteDAO {
             while (rs.next()) {
                 c.setId(rs.getInt("ID"));
                 c.setNome(rs.getString("NOME"));
-                c.setCelular(rs.getString("CELULAR"));
                 c.setCep(rs.getString("CEP"));
                 c.setCpf((rs.getString("CPF")));
                 c.setEmail(rs.getString("EMAIL"));
@@ -204,7 +199,6 @@ public class ClienteDAO {
 
                 c.setId(rs.getInt("ID"));
                 c.setNome(rs.getString("NOME"));
-                c.setCelular(rs.getString("CELULAR"));
                 c.setCep(rs.getString("CEP"));
                 c.setCpf((rs.getString("CPF")));
                 c.setEmail(rs.getString("EMAIL"));

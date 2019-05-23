@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package data;
 
 import java.sql.Timestamp;
@@ -15,21 +10,24 @@ import java.util.Date;
  * @author Android
  */
 public class ClienteData {
-    private String cpf;
-    private String endereco;
-    private String nome;
-    private String email;
-    private String telefone;
+    
     private Integer id;
-    private String celular;
+    private String nome;
+    private String cpf;
+    private String datan;
+    private String telefone;
+    private String endereco;
+    private String complemento;
     private String cep;
-    private Timestamp datan;
+    private String numerocasa;
     private String cidade;
     private String estado;
     private String nomet;
     private String numeroc;
+    private String codsegcartao; 
+    private String email; 
     private String senha;
-
+    
     public String getCpf() {
         return cpf;
     }
@@ -46,8 +44,32 @@ public class ClienteData {
         this.endereco = endereco;
     }
 
+    public String getNumerocasa() {
+        return numerocasa;
+    }
+
+    public void setNumerocasa(String numerocasa) {
+        this.numerocasa = numerocasa;
+    }
+
     public String getNome() {
         return nome;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public String getCodsegcartao() {
+        return codsegcartao;
+    }
+
+    public void setCodsegcartao(String codsegcartao) {
+        this.codsegcartao = codsegcartao;
     }
 
     public void setNome(String nome) {
@@ -78,13 +100,6 @@ public class ClienteData {
         this.id = id;
     }
 
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
 
     public String getCep() {
         return cep;
@@ -94,11 +109,11 @@ public class ClienteData {
         this.cep = cep;
     }
 
-    public Timestamp getDatan() {
+    public String getDatan() {
         return datan;
     }
 
-    public void setDatan(Timestamp datan) {
+    public void setDatan(String datan) {
         this.datan = datan;
     }
 

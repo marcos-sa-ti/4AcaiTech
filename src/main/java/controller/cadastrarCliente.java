@@ -21,35 +21,35 @@ public class cadastrarCliente extends HttpServlet{
 
         ClienteData c = new ClienteData();
 
-        c.setNome(request.getParameter("nomeCliente"));
+        c.setNome(request.getParameter("nome"));
 
-        c.setEmail(request.getParameter("emailCliente"));
+        c.setEmail(request.getParameter("email"));
 
-        c.setCpf(request.getParameter("cpfCliente"));
+        c.setCpf(request.getParameter("cpf"));
 
-        c.setEndereco(request.getParameter("enderecoCliente"));
+        c.setEndereco(request.getParameter("endereco"));
         
-        c.setComplemento(request.getParameter("complementoCliente"));
+        c.setComplemento(request.getParameter("complemento"));
 
-        c.setNumerocasa(request.getParameter("numerocasaCliente"));
+        c.setNumerocasa(request.getParameter("numerocasa"));
         
-        c.setCep(request.getParameter("cepCliente"));
+        c.setCep(request.getParameter("cep"));
 
-        c.setTelefone(request.getParameter("telefoneCliente"));
+        c.setTelefone(request.getParameter("telefone"));
         
-        c.setDatan(request.getParameter("datanascimentoCliente"));
+        c.setDatan(request.getParameter("datanascimento"));
         
-        c.setCidade(request.getParameter("cidadeCliente"));
+        c.setCidade(request.getParameter("cidade"));
         
-        c.setEstado(request.getParameter("estadoCliente"));
+        c.setEstado(request.getParameter("estado"));
         
-        c.setNomet(request.getParameter("nometitularCliente"));
+        c.setNomet(request.getParameter("nometitular"));
         
-        c.setNumeroc(request.getParameter("numerocartaoCliente"));
+        c.setNumeroc(request.getParameter("numerocartao"));
         
-        c.setCodsegcartao(request.getParameter("codsegcartaoCliente"));
+        c.setCodsegcartao(request.getParameter("codsegcartao"));
         
-        c.setSenha(request.getParameter("senhaCliente"));
+        c.setSenha(request.getParameter("senha"));
 
         ClienteDAO dao = new ClienteDAO();
 

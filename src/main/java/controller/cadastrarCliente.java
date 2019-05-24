@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "cadastrarCliente", urlPatterns = {"/cadastrarCliente"})
 public class cadastrarCliente extends HttpServlet{
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -60,12 +61,12 @@ public class cadastrarCliente extends HttpServlet{
         String MensagemDeRetorno = null;
 
         if (deuCerto == true) {
-            MensagemDeRetorno = "Cliente: '" + request.getParameter("nomeCliente") + "' cadastrado com sucesso!";
+            MensagemDeRetorno = "Cliente: '" + request.getParameter("nome") + "' cadastrado com sucesso!";
         } else {
-            MensagemDeRetorno = "Houve um erro ao cadastrar o cliente: '" + request.getParameter("nomeCliente") + "'.";
+            MensagemDeRetorno = "Houve um erro ao cadastrar o cliente: '" + request.getParameter("nome") + "'.";
         }
         request.setAttribute("retornoMensagem", MensagemDeRetorno);
-        request.getRequestDispatcher("arquivoteste.jsp").forward(request, response);
+        request.getRequestDispatcher("cadastrarCliente.jsp").forward(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(cadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
         }

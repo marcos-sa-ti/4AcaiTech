@@ -17,6 +17,7 @@ public class ClienteData {
     private String datan;
     private String telefone;
     private String endereco;
+
     private String complemento;
     private String cep;
     private String numerocasa;
@@ -155,7 +156,5 @@ public class ClienteData {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-    
-    
+    } 
 }

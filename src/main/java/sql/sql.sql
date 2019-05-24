@@ -6,7 +6,6 @@ CREATE TABLE cliente
 (
 id BIGINT NOT NULL auto_increment,		
 nome VARCHAR(100) NOT NULL,
-sobrenome VARCHAR(100) NOT NULL,
 cpf varchar (11) NOT NULL,
 datanascimento timestamp (06) NOT NULL,
 telefone VARCHAR(10) NOT NULL,

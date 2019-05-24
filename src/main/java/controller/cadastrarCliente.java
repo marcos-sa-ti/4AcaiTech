@@ -73,3 +73,54 @@ public class cadastrarCliente extends HttpServlet{
         
 }
 }
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
+        boolean deuCerto;
+        try {
+            deuCerto = dao.cadastraCliente(c);
+            request.setAttribute("retorno", "ok");
+        String MensagemDeRetorno = null;
+
+        if (deuCerto == true) {
+            MensagemDeRetorno = "Cliente: '" + request.getParameter("nomeCliente") + "' cadastrado com sucesso!";
+        } else {
+            MensagemDeRetorno = "Houve um erro ao cadastrar o cliente: '" + request.getParameter("nomeCliente") + "'.";
+        }
+        request.setAttribute("retornoMensagem", MensagemDeRetorno);
+        request.getRequestDispatcher("arquivoteste.jsp").forward(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(cadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        
+}
+}
+*/

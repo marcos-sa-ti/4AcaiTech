@@ -241,4 +241,41 @@ public class ClienteDAO {
         return deuCerto;
 
     }
+    
+    public ClienteData verificaLogin (String email, String senha) {
+        ClienteData novocliente = new ClienteData();
+        try {
+
+            Connection connection = new ConnectionFactory().getConnection();
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT * FROM `Cliente` WHERE email = '" + email + "' AND senha = '" + senha + "'";
+            ResultSet resultado = stmt.executeQuery(sql);
+
+            while (resultado.next()) {
+                novocliente.setId(resultado.getInt("id"));
+                novocliente.setNome(resultado.getString("nome"));
+                novocliente.setCpf(resultado.getString("cpf"));
+                novocliente.setCpf(resultado.getString("datanascimento"));
+                novocliente.setCpf(resultado.getString("telefone"));
+                novocliente.setCpf(resultado.getString("endereço"));
+                novocliente.setCpf(resultado.getString("complemento"));
+                novocliente.setCpf(resultado.getString("cep"));
+                novocliente.setCpf(resultado.getString("cidade"));
+                novocliente.setCpf(resultado.getString("cpf"));
+                novocliente.setCpf(resultado.getString("estado"));
+                novocliente.setCpf(resultado.getString("nometitular"));
+                novocliente.setCpf(resultado.getString("numerocartao"));
+                novocliente.setCpf(resultado.getString("codigoseg"));
+                novocliente.setCpf(resultado.getString("email"));
+                novocliente.setCpf(resultado.getString("senha"));
+
+            }
+            connection.close();
+        } catch (SQLException | ClassNotFoundException e) {
+            System.out.println("Erro no banco de dados verificar o login:" + e);
+        }
+
+        return novocliente;
+    }
+    
 }

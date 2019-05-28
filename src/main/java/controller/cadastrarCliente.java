@@ -19,44 +19,43 @@ public class cadastrarCliente extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        ClienteData c = new ClienteData();
+        ClienteData p = new ClienteData();
 
-        c.setNome(request.getParameter("nome"));
+        p.setNome(request.getParameter("nomeCliente"));
 
-        c.setEmail(request.getParameter("email"));
+        p.setEmail(request.getParameter("emailCliente"));
 
-        c.setCpf(request.getParameter("cpf"));
+        p.setCpf(request.getParameter("cpfCliente"));
 
-        c.setEndereco(request.getParameter("endereco"));
+        p.setEndereco(request.getParameter("enderecoCliente"));
         
-        c.setComplemento(request.getParameter("complemento"));
+        p.setComplemento(request.getParameter("complementoCliente"));
 
-        c.setNumerocasa(request.getParameter("numerocasa"));
+        p.setNumerocasa(request.getParameter("numerocasaCliente"));
         
-        c.setCep(request.getParameter("cep"));
+        p.setCep(request.getParameter("cepCliente"));
 
-        c.setTelefone(request.getParameter("telefone"));
+        p.setTelefone(request.getParameter("telefoneCliente"));
         
-        c.setDatan(request.getParameter("datanascimento"));
+        p.setDatan(request.getParameter("datanascimentoCliente"));
         
-        c.setCidade(request.getParameter("cidade"));
+        p.setCidade(request.getParameter("cidadeCliente"));
         
-        c.setEstado(request.getParameter("estado"));
+        p.setEstado(request.getParameter("estadoCliente"));
         
-        c.setNomet(request.getParameter("nometitular"));
+        p.setNomet(request.getParameter("nometitularCliente"));
         
-        c.setNumeroc(request.getParameter("numerocartao"));
+        p.setNumeroc(request.getParameter("numerocartaoCliente"));
         
-        c.setCodsegcartao(request.getParameter("codsegcartao"));
+        p.setCodsegcartao(request.getParameter("codsegcartaoCliente"));
         
-        c.setSenha(request.getParameter("senha"));
+        p.setSenha(request.getParameter("senhaCliente"));
 
         ClienteDAO dao = new ClienteDAO();
 
-        boolean deuCerto;
-        try {
-            deuCerto = dao.cadastraCliente(c);
-            request.setAttribute("retorno", "ok");
+        boolean deuCerto = dao.cadastraCliente(p);
+        
+        request.setAttribute("retorno", "ok");
         String MensagemDeRetorno = null;
 
         if (deuCerto == true) {
@@ -65,10 +64,7 @@ public class cadastrarCliente extends HttpServlet{
             MensagemDeRetorno = "Houve um erro ao cadastrar o cliente: '" + request.getParameter("nomeCliente") + "'.";
         }
         request.setAttribute("retornoMensagem", MensagemDeRetorno);
-        request.getRequestDispatcher("arquivoteste.jsp").forward(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(cadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        request.getRequestDispatcher("login.html").forward(request, response);
 
         
 }

@@ -17,7 +17,7 @@ public class ClienteData {
     private String datan;
     private String telefone;
     private String endereco;
-
+    private String datanascimento;
     private String complemento;
     private String cep;
     private String numerocasa;
@@ -157,4 +157,14 @@ public class ClienteData {
     public void setSenha(String senha) {
         this.senha = senha;
     } 
+
+    public String getDatanascimento() {
+        return datanascimento;
+    }
+
+    public void setDatanascimento(String datanascimento) {
+        this.datanascimento = datanascimento;
+    }
+    
+    
 }

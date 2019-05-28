@@ -15,12 +15,12 @@ import java.util.ArrayList;
  * @author Android
  */
 public class ClienteDAO {
-    public boolean cadastraCliente(ClienteData c) throws ClassNotFoundException {
+    public boolean cadastraCliente(ClienteData c){
         boolean deuCerto = false;
         try {
             Connection connection = new ConnectionFactory().getConnection();
 
-            String sqlCliente = "INSERT INTO `cliente`(`nome`, `cpf`, 'datanascimento', `telefone`, `email`,`senha`,`endereco`, `numeroend`, `complemento`, 'cep', 'cidade', 'estado', 'nometitular', 'numerocartao',`codigoseg`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sqlCliente = "INSERT INTO `cliente`(nome, cpf, datanascimento, telefone, email, senha, endereco, numeroend, complemento, cep, cidade, estado, nometitular, numerocartao, codigoseg) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmtCliente = connection.prepareStatement(sqlCliente);
             pstmtCliente.setString(1, c.getNome());
             pstmtCliente.setString(2, c.getCpf());
@@ -38,17 +38,11 @@ public class ClienteDAO {
             pstmtCliente.setString(14, c.getNumeroc());
             pstmtCliente.setString(15, c.getCodsegcartao());
             
-            int deuCertoSQL = pstmtCliente.executeUpdate();
-
-            if (deuCertoSQL == 1) {
-                deuCerto = true;
-            } else {
-                deuCerto = false;
-            }
+            pstmtCliente.executeUpdate();
 
             connection.close();
 
-        } catch (SQLException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Erro no banco de dados cadastraCliente: " + ex);
             deuCerto = false;
         }

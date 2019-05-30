@@ -1,8 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<%-- 
+    Document   : meusPedidos
+    Created on : 30/05/2019, 17:24:56
+    Author     : bianca.osartorelli
+--%>
+
+<html lang="en">
+<head>
+	<title>Meus Pedidos</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
@@ -33,37 +39,7 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-
-    <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-46156385-1', 'cssscript.com');
-            ga('send', 'pageview');
-
-        </script>
-    
-        <c:if test="${empty sessionScope.getNome}">
-            <c:redirect url = "/expulsarDaPaginaSemLogar"/>
-        </c:if>
-    
-    
-    
-    
-    
-    
-    
-    
-    </head>
+</head>
 <body class="animsition">
 	
 	<!-- Header -->
@@ -77,14 +53,14 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/logo1.png" alt="IMG-LOGO">
+						<img href="index.html" src="images/icons/logo1.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="/mavenproject1/index.jsp">Home</a>
+								<a href="/mavenproject1/homeLogado.jsp">Home</a>
 								
 							</li>
                                                         
@@ -92,7 +68,15 @@
                                                                 <a href="/mavenproject1/institucional.jsp">Institucional</a>
                                                         </li>
 
-                     												
+                     					
+							<li>
+								<a href="/mavenproject1/meusDados.jsp">Meus Dados</a>
+							</li>
+                                                        
+                                                        <li>
+								<a href="/mavenproject1/meusPedidos.jsp">Meus Pedidos</a>
+							</li>
+                																	
 						</ul>
 					</div>	
 
@@ -105,7 +89,7 @@
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							
                      <li>
-                     <a href="/mavenproject1/shopping-cart.jsp" class="zmdi zmdi-shopping-cart">
+                     <a href="shoping-cart.html" class="zmdi zmdi-shopping-cart">
 
                      </a>
                       </li>
@@ -116,7 +100,7 @@
                   <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 							
                      <li>
-                     <a href="/mavenproject1/telalogin.jsp" class="zmdi zmdi-account">
+                     <a href="login.html" class="zmdi zmdi-account">
 
                      </a>
                       </li>
@@ -134,7 +118,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="/mavenproject1/index.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -205,11 +189,11 @@
 				</li>
 
 				<li>
-					<a href="/mavenproject1/produtos.jsp">Shop</a>
+					<a href="product.html">Shop</a>
 				</li>
 
 				<li>
-					<a href="/mavenproject1/shopping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
@@ -250,72 +234,88 @@
    <br>
    <br>
    <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
    
 
+<div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h2 class="h3 mb-3 text-black">Meus Pedidos</h2><br>
+          </div>
+          <div class="form-group row col-md-2">
+                 
+        </div>
+          
+          
 
-	<!-- Banner -->
-	<div class="sec-banner bg0 p-t-80 p-b-50">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/Jogos.png" alt="IMG-BANNER">
+		<div class="site-blocks-table col-md-12">
 
-						<a href="/mavenproject1/productJogos.jsp" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Jogos
-								</span>
-   
-								
-							</div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="product-thumbnail"><input type="text" class="form-control border-0" placeholder="Pesquisar"></th>
+                    <th class="product-thumbnail">Preço</th>
+                    <th class="product-thumbnail">Status</th>
+                   
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="product-name">
+                      <h2 class="h5 text-black">Item 1</h2>
+                    </td>
+                    <td>
 
-							
-						</a>
-					</div>
-				</div>
+                    <h2 class="h5 text-black">R$ 10,00</h2>
+               
+               
+                    </td>
+                     <td>
 
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/Console.jpg" alt="IMG-BANNER">
+                    <h2 class="h5 text-black">Enviado</h2>
+               
+               
+                    </td>
+                    
+                    
+                  </tr>
+                  
+                     <tr>
+                    <td class="product-name">
+                      <h2 class="h5 text-black">Item 2</h2>
+                    </td>
+                    <td>
 
-						<a href="/mavenproject1/productConsole.jsp" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Consoles
-								</span>
+		<h2 class="h5 text-black">R$ 10,00</h2>
+                   
+               
+               
+                    </td>
+                     <td>
 
-								
-							</div>
+                    <h2 class="h5 text-black">Aguardando Pagamento</h2>
+               
+               
+                    </td>
+                    
+                  </tr>
 
-							
-						</a>
-					</div>
-				</div>
+               
+                </tbody>
+              </table>
+            </div>
+			
 
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/Acessorios.jpg" alt="IMG-BANNER">
-
-						<a href="/mavenproject1/productAcessorios.jsp" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Acessorios
-								</span>
-
-								
-							</div>
-
-							
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        
+        </div>
+      </div>
+    </div>
 
 
 <br>
@@ -339,7 +339,7 @@
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
+						ENTRE EM CONTATO
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
@@ -364,16 +364,6 @@
 			</div>
 		</div>
 	</footer>
-
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
-	</div>
-
-
 
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

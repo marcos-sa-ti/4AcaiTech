@@ -1,3 +1,9 @@
+<%-- 
+    Document   : homeLogado
+    Created on : 30/05/2019, 17:18:10
+    Author     : bianca.osartorelli
+--%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,37 +39,7 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-
-    <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-46156385-1', 'cssscript.com');
-            ga('send', 'pageview');
-
-        </script>
-    
-        <c:if test="${empty sessionScope.getNome}">
-            <c:redirect url = "/expulsarDaPaginaSemLogar"/>
-        </c:if>
-    
-    
-    
-    
-    
-    
-    
-    
-    </head>
+</head>
 <body class="animsition">
 	
 	<!-- Header -->
@@ -92,7 +68,20 @@
                                                                 <a href="/mavenproject1/institucional.jsp">Institucional</a>
                                                         </li>
 
-                     												
+                     					
+							<li>
+								<a href="/mavenproject1/meusDados.jsp">Meus Dados</a>
+							</li>
+                                                        
+                                                        <li>
+								<a href="/mavenproject1/meusPedidos.jsp">Meus Pedidos</a>
+							</li>
+                     
+                    
+
+							
+
+							
 						</ul>
 					</div>	
 

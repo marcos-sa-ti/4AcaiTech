@@ -1,8 +1,9 @@
 <%-- 
-    Document   : cadastrarCliente
-    Created on : 27/05/2019, 20:43:51
-    Author     : murilo.aaraujo
+    Document   : meusDados
+    Created on : 30/05/2019, 17:18:24
+    Author     : bianca.osartorelli
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -241,7 +242,7 @@
 
                             <div class="p-3 p-lg-5 border">
 
-                                <center><b>Dados</b></center>
+                                <center><b>Editar Dados</b></center>
                                 <br>
 
                                 <div class="form-group row">
@@ -354,7 +355,7 @@
                                 <center>
                                     <div class="form-group row">
                                         <div class="col-lg-12">
-                                            <input type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" value="Cadastrar">
+                                            <input type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" value="Atualizar">
                                         </div>
                                     </div>
                                 </center>

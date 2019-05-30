@@ -1,3 +1,9 @@
+<%-- 
+    Document   : homeAdmin
+    Created on : 30/05/2019, 17:17:51
+    Author     : bianca.osartorelli
+--%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,7 +68,19 @@
                                                                 <a href="/mavenproject1/institucional.jsp">Institucional</a>
                                                         </li>
 
-                     												
+                     					
+							<li>
+								<a href="#">Relatorios</a>
+							</li>
+                     
+                     <li>
+								<a href="/mavenproject1/produtos.jsp">Gerenciar Produtos</a>
+							</li>
+
+
+							
+
+							
 						</ul>
 					</div>	
 

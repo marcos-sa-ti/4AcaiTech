@@ -1,3 +1,9 @@
+<%-- 
+    Document   : homeLogado
+    Created on : 30/05/2019, 17:18:10
+    Author     : bianca.osartorelli
+--%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,7 +68,20 @@
                                                                 <a href="/mavenproject1/institucional.jsp">Institucional</a>
                                                         </li>
 
-                     												
+                     					
+							<li>
+								<a href="/mavenproject1/meusDados.jsp">Meus Dados</a>
+							</li>
+                                                        
+                                                        <li>
+								<a href="/mavenproject1/meusPedidos.jsp">Meus Pedidos</a>
+							</li>
+                     
+                    
+
+							
+
+							
 						</ul>
 					</div>	
 

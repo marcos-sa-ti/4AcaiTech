@@ -1,7 +1,13 @@
+<%-- 
+    Document   : institucional
+    Created on : 30/05/2019, 16:49:16
+    Author     : bianca.osartorelli
+--%>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Institucional</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
@@ -62,7 +68,19 @@
                                                                 <a href="/mavenproject1/institucional.jsp">Institucional</a>
                                                         </li>
 
-                     												
+                     					
+							<li>
+								<a href="#">Relatorios</a>
+							</li>
+                     
+                     <li>
+								<a href="/mavenproject1/produtos.jsp">Produtos</a>
+							</li>
+
+
+							
+
+							
 						</ul>
 					</div>	
 
@@ -104,23 +122,42 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="/mavenproject1/index.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a class="logo">
+						<img src="images/icons/logo1.png" alt="IMG-LOGO">
+					</a>
+
 			</div>
 
 			<!-- Icon header -->
-			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-					<i class="zmdi zmdi-search"></i>
-				</div>
+			<div class="wrap-icon-header flex-w flex-r-m">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+							<i class="zmdi zmdi-search"></i>
+						</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
-					<i class="zmdi zmdi-shopping-cart"></i>
-				</div>
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+							
+                     <li>
+                     <a href="/mavenproject1/shopping-cart.jsp" class="zmdi zmdi-shopping-cart">
 
-				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-					<i class="zmdi zmdi-favorite-outline"></i>
-				</a>
-			</div>
+                     </a>
+                      </li>
+                     
+                     
+						</div>
+                  
+                  <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+							
+                     <li>
+                     <a href="/mavenproject1/telalogin.jsp" class="zmdi zmdi-account">
+
+                     </a>
+                      </li>
+               
+                     
+						</div>
+
+						
+					</div>
 
 			<!-- Button show menu -->
 			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
@@ -134,65 +171,21 @@
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
 			<ul class="topbar-mobile">
-				<li>
-					<div class="left-top-bar">
-						Free shipping for standard order over $100
-					</div>
-				</li>
+				
 
-				<li>
-					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
-						</a>
-					</div>
-				</li>
-			</ul>
+						</ul>
 
 			<ul class="main-menu-m">
 				<li>
 					<a href="index.html">Home</a>
-					<ul class="sub-menu-m">
-						<li><a href="index.html">Homepage 1</a></li>
-						<li><a href="home-02.html">Homepage 2</a></li>
-						<li><a href="home-03.html">Homepage 3</a></li>
-					</ul>
-					<span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
+					
 				</li>
 
 				<li>
-					<a href="/mavenproject1/produtos.jsp">Shop</a>
+					<a href="/mavenproject1/institucional.jsp">Institucional</a>
 				</li>
 
-				<li>
-					<a href="/mavenproject1/shopping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
-				</li>
-
-				<li>
-					<a href="blog.html">Blog</a>
-				</li>
-
-				<li>
-					<a href="about.html">About</a>
-				</li>
-
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
+				
 			</ul>
 		</div>
 
@@ -215,86 +208,30 @@
 
 
 
-	<!-- Slider -->
-	<br>
-   <br>
-   <br>
-   <br>
-   
-
 
 	<!-- Banner -->
 	<div class="sec-banner bg0 p-t-80 p-b-50">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/Jogos.png" alt="IMG-BANNER">
+			
 
-						<a href="/mavenproject1/productJogos.jsp" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Jogos
-								</span>
-   
-								
-							</div>
-
-							
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/Console.jpg" alt="IMG-BANNER">
-
-						<a href="/mavenproject1/productConsole.jsp" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Consoles
-								</span>
-
-								
-							</div>
-
-							
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/Acessorios.jpg" alt="IMG-BANNER">
-
-						<a href="/mavenproject1/productAcessorios.jsp" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Acessorios
-								</span>
-
-								
-							</div>
-
-							
-						</a>
-					</div>
-				</div>
+                    <p>A Açaí Tech é uma loja exclusivamente online.</p><br>
+                        
+                    <p>Além de ter o melhor preço, enviamos nossos produtos para todo o Brasil com frete grátis!</p><br>
+                    
+                    <p>Oferecemos garantia de 2 meses em todos a loja. </p><br>
+                    
+                    <p>É um prazer recebê-lo. Em caso de dúvidas, entre contato conosco.</p><br>
+                    
+                    <p>Seja bem vindo, e boas compras!</p><br>
+                    
+                    <p>Equipe Açaí Tech</p>
+                    
+				
 			</div>
 		</div>
-	</div>
+	
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br><br><br>
 
@@ -309,7 +246,7 @@
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
+						ENTRE EM CONTATO
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
@@ -449,4 +386,5 @@
 
 </body>
 </html>
+
 

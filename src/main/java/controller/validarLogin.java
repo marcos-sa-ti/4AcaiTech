@@ -22,7 +22,7 @@ public class validarLogin extends HttpServlet {
             throws ServletException, IOException {
        
         
-        String retornodapagina = "index.html";
+        String retornodapagina = "/index.jsp";
         
         boolean deuCerto = false;
         String nomelogado = null;
@@ -42,7 +42,7 @@ public class validarLogin extends HttpServlet {
         
             if (novoobjcliente != null){
             
-            retornodapagina = "index.html";
+            retornodapagina = "/cadastrarCliente.jsp";
                 HttpSession sessao = request.getSession();
                 sessao.setAttribute("getCpf", novoobjcliente.getCpf());
                 nomelogado = novoobjcliente.getNome();

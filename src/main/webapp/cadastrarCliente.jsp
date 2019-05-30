@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Product Detail</title>
+        <title>Açai Tech - Cadastro Cliente</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--===============================================================================================-->	
@@ -59,7 +59,7 @@
                         <div class="menu-desktop">
                             <ul class="main-menu">
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="/mavenproject1/index.jsp">Home</a>
 
                                 </li>
 
@@ -70,7 +70,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="Produtos.html">Produtos</a>
+                                    <a href="/mavenproject1/produtos.jsp">Produtos</a>
                                 </li>
 
                             </ul>

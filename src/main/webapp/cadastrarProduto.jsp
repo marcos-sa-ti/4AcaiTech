@@ -236,7 +236,7 @@
           
           <div class="col-md-12">
 
-            <form action="#" method="post">
+              <form  id="telaformularioproduto" action="${pageContext.request.contextPath}/cadastrarProduto" enctype="multipart/form-data" method="post">
               
               <div class="p-3 p-lg-5 border">
 			    <div class="form-group row">
@@ -256,9 +256,15 @@
                 <div class="form-group row">
                 	
                   <div class="col-md-2">
-                    <label for="c_fname" class="text-black">Preco <span class="text-danger">*</span></label>
+                    <label for="c_fname" class="text-black">Preco da compra <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="c_fname" name="c_fname">
                   </div>
+                    
+                     <div class="col-md-2">
+                    <label for="c_fname" class="text-black">Preco da venda <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="c_fname" name="c_fname">
+                  </div>
+                    
                   
                   <div class="col-md-2">
                     <label for="c_lname" class="text-black">Quantidade <span class="text-danger">*</span></label>
@@ -267,10 +273,10 @@
                   
                   <div class="col-md-6">
                     <label for="c_fname" class="text-black">Imagem <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_fname" name="c_fname">
+                    <input type="text" class="form-control" id="c_fname" name="fotoqueoclienteescolheu">
                   </div><br>
                 <div class="col-md-2">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Upload">
+                    <input type="file" class="btn btn-primary btn-lg btn-block" value="Procurar foto">
                   </div>
                 </div>
                 <br><br>

@@ -2,6 +2,7 @@ package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
@@ -29,5 +30,9 @@ public class ConnectionFactory {
     public void restartConnection() throws SQLException, ClassNotFoundException {
         getConnection().close();
         getConnection();
+    }
+
+    public PreparedStatement prepareStatement(String insert_into_produtoimagem_VALUES_) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

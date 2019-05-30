@@ -55,7 +55,7 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="index.html">Home</a>
+								<a href="/mavenproject1/index.jsp">Home</a>
 								
 							</li>
 
@@ -65,7 +65,7 @@
 							</li>
                      
                      <li>
-								<a href="Produtos.html">Produtos</a>
+								<a href="/mavenproject1/produtos.jsp">Produtos</a>
 							</li>
 
 
@@ -84,7 +84,7 @@
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							
                      <li>
-                     <a href="shoping-cart.html" class="zmdi zmdi-shopping-cart">
+                     <a href="/mavenproject1/shopping-cart.jsp" class="zmdi zmdi-shopping-cart">
 
                      </a>
                       </li>
@@ -95,7 +95,7 @@
                   <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 							
                      <li>
-                     <a href="login.html" class="zmdi zmdi-account">
+                     <a href="/mavenproject1/telalogin.jsp" class="zmdi zmdi-account">
 
                      </a>
                       </li>
@@ -244,7 +244,7 @@
           </div>
           <div class="form-group row col-md-2">
                   <div class="col-lg-12">
-                    <input onClick="location.href='cadastrarProduto.html';" type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" value="Adicionar Produto">
+                    <input onClick="location.href='/mavenproject1/cadastrarProduto.jsp';" type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" value="Adicionar Produto">
                         </div>
         </div>
           

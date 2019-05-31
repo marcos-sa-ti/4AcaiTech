@@ -83,7 +83,7 @@
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							
                      <li>
-                     <a href="/mavenproject1/shoping-cart.jsp" class="zmdi zmdi-shopping-cart">
+                     <a href="/mavenproject1/shopping-cart.jsp" class="zmdi zmdi-shopping-cart">
 
                      </a>
                       </li>
@@ -187,7 +187,7 @@
 				</li>
 
 				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="/mavenproject1/shopping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>

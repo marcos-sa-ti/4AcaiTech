@@ -251,7 +251,7 @@ public class ClienteDAO {
                 novocliente.setCpf(resultado.getString("cpf"));
                 novocliente.setCpf(resultado.getString("datanascimento"));
                 novocliente.setCpf(resultado.getString("telefone"));
-                novocliente.setCpf(resultado.getString("endereço"));
+                novocliente.setCpf(resultado.getString("endereco"));
                 novocliente.setCpf(resultado.getString("complemento"));
                 novocliente.setCpf(resultado.getString("cep"));
                 novocliente.setCpf(resultado.getString("cidade"));

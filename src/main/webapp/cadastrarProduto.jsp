@@ -57,7 +57,7 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="index.html">Home</a>
+								<a href="/mavenproject1/index.jsp">Home</a>
 								
 							</li>
 
@@ -67,7 +67,7 @@
 							</li>
                      
                      <li>
-								<a href="Produtos.html">Produtos</a>
+								<a href="/mavenproject1/produtos.jsp">Produtos</a>
 							</li>
 
 
@@ -86,7 +86,7 @@
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							
                      <li>
-                     <a href="shoping-cart.html" class="zmdi zmdi-shopping-cart">
+                     <a href="/mavenproject1/shopping-cart.jsp" class="zmdi zmdi-shopping-cart">
 
                      </a>
                       </li>
@@ -97,7 +97,7 @@
                   <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 							
                      <li>
-                     <a href="login.html" class="zmdi zmdi-account">
+                     <a href="/mavenproject1/telalogin.jsp" class="zmdi zmdi-account">
 
                      </a>
                       </li>
@@ -115,7 +115,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="/mavenproject1/index.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->

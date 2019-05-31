@@ -3,7 +3,8 @@
     Created on : 30/05/2019, 17:24:56
     Author     : bianca.osartorelli
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <head>
 	<title>Meus Pedidos</title>
@@ -259,7 +260,7 @@
                 <thead>
                   <tr>
                     <th class="product-thumbnail"><input type="text" class="form-control border-0" placeholder="Pesquisar"></th>
-                    <th class="product-thumbnail">Preço</th>
+                    <th class="product-thumbnail">PreÃ§o</th>
                     <th class="product-thumbnail">Status</th>
                    
                     

@@ -49,7 +49,7 @@ public class ClienteDAO {
         return deuCerto;
     }
 
-    public boolean alterarCliente(ClienteData c) throws ClassNotFoundException {
+    public boolean alterarCliente(ClienteData c) {
         boolean deuCerto = false;
         try {
             Connection connection = new ConnectionFactory().getConnection();
@@ -78,14 +78,14 @@ public class ClienteDAO {
 
             connection.close();
 
-        } catch (SQLException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Erro no banco de dados alterarCliente:" + ex);
             deuCerto = false;
         }
         return deuCerto;
     }
 
-    public ArrayList<ClienteData> getClientes() throws ClassNotFoundException {
+    public ArrayList<ClienteData> getClientes() {
         ArrayList<ClienteData> listaCliente = new ArrayList<>();
         try {
             Connection connection = new ConnectionFactory().getConnection();
@@ -110,14 +110,14 @@ public class ClienteDAO {
 
             }
             connection.close();
-        } catch (SQLException e) {
-            System.out.println("Erro no banco de dados getClientes:" + e);
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Erro no banco de dados getClientes:" + ex);
         }
 
         return listaCliente;
     }
 
-    public ArrayList<ClienteData> getClienteByNome(String nome) throws ClassNotFoundException {
+    public ArrayList<ClienteData> getClienteByNome(String nome) {
         ArrayList<ClienteData> listaCliente = new ArrayList<>();
         try {
             Connection connection = new ConnectionFactory().getConnection();
@@ -142,14 +142,14 @@ public class ClienteDAO {
 
             }
             connection.close();
-        } catch (SQLException e) {
-            System.out.println("Erro no banco de dados getClienteByNome: " + e);
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Erro no banco de dados getClienteByNome: " + ex);
         }
 
         return listaCliente;
     }
 
-    public ClienteData getClienteByCpf(String cpf) throws ClassNotFoundException {
+    public ClienteData getClienteByCpf(String cpf) {
         ClienteData c = new ClienteData();
         try {
 
@@ -174,14 +174,14 @@ public class ClienteDAO {
             }
 
             connection.close();
-        } catch (SQLException e) {
-            System.out.println("Erro no banco de dados getClienteByCpf:" + e);
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Erro no banco de dados getClienteByCpf:" + ex);
         }
         System.out.println(c.getCpf());
         return c;
     }
 
-    public ClienteData getClienteById(Integer id) throws ClassNotFoundException {
+    public ClienteData getClienteById(Integer id){
         ClienteData c = new ClienteData();
         try {
 
@@ -206,14 +206,14 @@ public class ClienteDAO {
 
             }
             connection.close();
-        } catch (SQLException e) {
-            System.out.println("Erro no banco de dados getClienteById:" + e);
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Erro no banco de dados getClienteById:" + ex);
         }
 
         return c;
     }
 
-    public boolean excluirCliente(int id) throws ClassNotFoundException {
+    public boolean excluirCliente(int id) {
         boolean deuCerto = false;
         try {
 
@@ -229,7 +229,7 @@ public class ClienteDAO {
             }
             connection.close();
 
-        } catch (SQLException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Erro no banco de dados excluirCliente: " + ex);
         }
         return deuCerto;
@@ -265,8 +265,8 @@ public class ClienteDAO {
 
             }
             connection.close();
-        } catch (SQLException | ClassNotFoundException e) {
-            System.out.println("Erro no banco de dados verificar o login:" + e);
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Erro no banco de dados verificar o login:" + ex);
         }
 
         return novocliente;

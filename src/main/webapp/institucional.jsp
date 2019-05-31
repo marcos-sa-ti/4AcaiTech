@@ -3,7 +3,8 @@
     Created on : 30/05/2019, 16:49:16
     Author     : bianca.osartorelli
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -214,17 +215,17 @@
 		<div class="container">
 			
 
-                    <p>A Açaí Tech é uma loja exclusivamente online.</p><br>
+                    <p>A AÃ§aÃ­ Tech Ã© uma loja exclusivamente online.</p><br>
                         
-                    <p>Além de ter o melhor preço, enviamos nossos produtos para todo o Brasil com frete grátis!</p><br>
+                    <p>AlÃ©m de ter o melhor preÃ§o, enviamos nossos produtos para todo o Brasil com frete grÃ¡tis!</p><br>
                     
                     <p>Oferecemos garantia de 2 meses em todos a loja. </p><br>
                     
-                    <p>É um prazer recebê-lo. Em caso de dúvidas, entre contato conosco.</p><br>
+                    <p>Ã‰ um prazer recebÃª-lo. Em caso de dÃºvidas, entre contato conosco.</p><br>
                     
                     <p>Seja bem vindo, e boas compras!</p><br>
                     
-                    <p>Equipe Açaí Tech</p>
+                    <p>Equipe AÃ§aÃ­ Tech</p>
                     
 				
 			</div>

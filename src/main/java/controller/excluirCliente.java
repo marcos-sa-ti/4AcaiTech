@@ -8,8 +8,6 @@ package controller;
 import dao.ClienteDAO;
 import data.ClienteData;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,28 +30,18 @@ public class excluirCliente extends HttpServlet {
         ClienteDAO cliente = new ClienteDAO();
 
         ClienteData clienteSendoExcluido;
-        try {
-            clienteSendoExcluido = cliente.getClienteById(idCliente);
-            boolean deuCerto;
-            try {
-                deuCerto = cliente.excluirCliente(idCliente);
-                request.setAttribute("retorno", "ok");
-
-                String MensagemDeRetorno = null;
-
-                if (deuCerto == true) {
-                    MensagemDeRetorno = "Cliente: '" + clienteSendoExcluido.getNome() + "' excluido com sucesso!";
-                } else {
-                    MensagemDeRetorno = "Houve um erro ao excluir o cliente: '" + clienteSendoExcluido.getNome() + "'.";
-                }
-                request.setAttribute("retornoMensagem", MensagemDeRetorno);
-                request.getRequestDispatcher("view/listaCliente.jsp").forward(request, response);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(excluirCliente.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(excluirCliente.class.getName()).log(Level.SEVERE, null, ex);
+        clienteSendoExcluido = cliente.getClienteById(idCliente);
+        boolean deuCerto;
+        deuCerto = cliente.excluirCliente(idCliente);
+        request.setAttribute("retorno", "ok");
+        String MensagemDeRetorno = null;
+        if (deuCerto == true) {
+            MensagemDeRetorno = "Cliente: '" + clienteSendoExcluido.getNome() + "' excluido com sucesso!";
+        } else {
+            MensagemDeRetorno = "Houve um erro ao excluir o cliente: '" + clienteSendoExcluido.getNome() + "'.";
         }
+        request.setAttribute("retornoMensagem", MensagemDeRetorno);
+        request.getRequestDispatcher("view/listaCliente.jsp").forward(request, response);
 
     }
 }

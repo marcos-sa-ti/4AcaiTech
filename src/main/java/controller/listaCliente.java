@@ -8,8 +8,6 @@ import data.ClienteData;
 import dao.ClienteDAO;
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,11 +25,7 @@ public class listaCliente extends HttpServlet{
         ClienteDAO Clientes = new ClienteDAO();
 
         List<ClienteData> lista;
-        try {
-            lista = Clientes.getClientes();
-            request.setAttribute("lista", lista);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(listaCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        lista = Clientes.getClientes();
+        request.setAttribute("lista", lista);
     }
 }

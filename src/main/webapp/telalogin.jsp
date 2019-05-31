@@ -250,7 +250,7 @@
 				<div class="form-group row">
                   <div class="col-md-12">
                     <label for="c_fname" class="text-black">Senha <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_fname" name="senhadidigitadapelocliente">
+                    <input type="password" class="form-control" id="c_fname" name="senhadidigitadapelocliente">
                   </div>
                 </div>
 				

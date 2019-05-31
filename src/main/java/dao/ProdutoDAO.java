@@ -31,9 +31,15 @@ public class ProdutoDAO {
             pstmtProduto.setInt(4, p.getPrecoCompra());
             pstmtProduto.setInt(5, p.getQuantidade());
             
+            
+            /* Corrigir essa porra depois 
+            
+            
             InputStream is = part.getInputStream();
             pstmtProduto.setBlob(6,is);
             
+            
+            */
             
             
             int deuCertoSQL = pstmtProduto.executeUpdate();

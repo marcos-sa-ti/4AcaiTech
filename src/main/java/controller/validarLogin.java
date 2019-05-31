@@ -42,11 +42,12 @@ public class validarLogin extends HttpServlet {
         
             if (novoobjcliente != null){
             
-            retornodapagina = "/produtos.jsp";
+            retornodapagina = "/index.jsp";
                 HttpSession sessao = request.getSession();
                 sessao.setAttribute("getCpf", novoobjcliente.getCpf());
                 nomelogado = novoobjcliente.getNome();
                 deuCerto = true;
+                
              
             }
   

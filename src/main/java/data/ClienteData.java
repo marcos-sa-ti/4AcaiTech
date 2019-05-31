@@ -3,12 +3,6 @@ package data;
 import java.sql.Timestamp;
 import java.util.Date;
 
-
-
-/**
- *
- * @author Android
- */
 public class ClienteData {
     
     private Integer id;

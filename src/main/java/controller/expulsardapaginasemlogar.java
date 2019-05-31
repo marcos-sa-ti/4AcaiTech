@@ -36,7 +36,7 @@ public class expulsardapaginasemlogar extends HttpServlet {
     
         request.setAttribute("mensagemRetorno",mensagemRetorno);
         
-        request.getServletContext().getRequestDispatcher("/mavenproject1/telalogin.jsp").forward(request, response);
+        request.getServletContext().getRequestDispatcher("/telalogin.jsp").forward(request, response);
         
     
     

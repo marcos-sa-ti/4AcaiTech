@@ -1,6 +1,8 @@
 package controller;
 
 import connection.ConnectionFactory;
+import dao.ProdutoDAO;
+import data.ProdutoData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -39,10 +41,30 @@ public class cadastrarProduto extends HttpServlet {
     
     PrintWriter saida;
     
+    
     @Override
      protected void doPost (HttpServletRequest request , HttpServletResponse response)
           throws ServletException, IOException {
      
+         ProdutoData novoproduto = new ProdutoData();
+         
+         
+         novoproduto.setNome(request.getParameter("nomeProduto"));
+         novoproduto.setNome(request.getParameter("descricaoProduto"));
+         novoproduto.setPrecoCompra(Integer.parseInt(request.getParameter("precoCompraProduto")));
+         novoproduto.setPrecoVenda(Integer.parseInt(request.getParameter("precoVendaProduto")));
+         novoproduto.setPrecoVenda(Integer.parseInt(request.getParameter("quantidadeProduto")));
+         saida = response.getWriter();
+         Part part = request.getPart("fotoqueoclienteescolheu");
+         
+         
+         
+         
+         /* Código que salvar somente a imagem do produto
+         /* Código que salvar somente a imagem do produto
+         /* Código que salvar somente a imagem do produto
+         /* Código que salvar somente a imagem do produto
+        
          
          response.setContentType("text/html;charset=UTF-8");
          saida = response.getWriter();
@@ -79,7 +101,28 @@ public class cadastrarProduto extends HttpServlet {
          
      
      };
+         
+         
+         
+    */
     
+    ProdutoDAO dao = new ProdutoDAO();
     
+    boolean deuCerto = dao.cadastraProduto(novoproduto);
+    request.setAttribute("retorno", "ok");
     
+    String mensagemRetorno = null;
+    
+    if (deuCerto == true){
+    mensagemRetorno = "Produto: "+request.getParameter("nomeProduto")+ " cadastrado com sucesso! "; 
+    }
+    else {
+    mensagemRetorno = "Houve um erro ao cadastrar o produto: "+ request.getParameter("nomeProduto")+" ";
+    }
+    request.setAttribute("mensagemRetorno", mensagemRetorno);
+    request.getRequestDispatcher("/index.jsp").forward(request,response);
+         
+         
+         
+}
 }

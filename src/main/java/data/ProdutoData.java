@@ -5,6 +5,8 @@
  */
 package data;
 
+import java.io.InputStream;
+
 /**
  *
  * @author Android
@@ -13,10 +15,10 @@ public class ProdutoData {
     private int Id;
     private String Nome;
     private String Descricao;
-    private int Preco;
-    private int Categoria;
-    private int AnoLancamento;
+    private int PrecoVenda;
+    private int PrecoCompra;
     private int Quantidade;
+      
 
     public int getId() {
         return Id;
@@ -42,28 +44,20 @@ public class ProdutoData {
         this.Descricao = Descricao;
     }
 
-    public int getPreco() {
-        return Preco;
+    public int getPrecoVenda() {
+        return PrecoVenda;
     }
 
-    public void setPreco(int Preco) {
-        this.Preco = Preco;
+    public void setPrecoVenda(int PrecoVenda) {
+        this.PrecoVenda = PrecoVenda;
     }
 
-    public int getCategoria() {
-        return Categoria;
+    public int getPrecoCompra() {
+        return PrecoCompra;
     }
 
-    public void setCategoria(int Categoria) {
-        this.Categoria = Categoria;
-    }
-
-    public int getAnoLancamento() {
-        return AnoLancamento;
-    }
-
-    public void setAnoLancamento(int AnoLancamento) {
-        this.AnoLancamento = AnoLancamento;
+    public void setPrecoCompra(int PrecoCompra) {
+        this.PrecoCompra = PrecoCompra;
     }
 
     public int getQuantidade() {
@@ -73,6 +67,9 @@ public class ProdutoData {
     public void setQuantidade(int Quantidade) {
         this.Quantidade = Quantidade;
     }
-    
+
+    public void setBlob(int i, InputStream is) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

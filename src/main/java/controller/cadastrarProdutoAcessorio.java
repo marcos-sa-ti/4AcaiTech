@@ -23,14 +23,8 @@ public class cadastrarProdutoAcessorio {
         p.setNome(request.getParameter("nomeProduto"));
 
         p.setDescricao(request.getParameter("descricao"));
-        
-        p.setPreco(Integer.parseInt(request.getParameter("preco")));
-        
-        p.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
-        
-        p.setAnoLancamento(Integer.parseInt(request.getParameter("anolancamento")));
 
-        p.setCategoria(Integer.parseInt(request.getParameter("categoria")));
+        p.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         
         ProdutoDAO dao = new ProdutoDAO();
 

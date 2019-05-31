@@ -54,11 +54,7 @@
 
         </script>
     
-        <c:if test="${empty sessionScope.getNome}">
-            <c:redirect url = "/expulsarDaPaginaSemLogar"/>
-        </c:if>
-    
-    
+      
     
     
     

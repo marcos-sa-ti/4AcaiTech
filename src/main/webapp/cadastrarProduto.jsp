@@ -244,14 +244,14 @@
 			    <div class="form-group row">
                   <div class="col-md-12">
                     <label for="c_subject" class="text-black">Nome </label>
-                    <input type="text" class="form-control" id="c_subject" name="c_subject">
+                    <input type="text" class="form-control" id="c_subject" name="nomeProduto">
                   </div>
                 </div>
                 
                       <div class="form-group row">
                   <div class="col-md-12">
                     <label for="c_message" class="text-black">Descricao </label>
-                    <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                    <textarea name="descricaoProduto" id="c_message" cols="30" rows="7" class="form-control"></textarea>
                  </div>
                 </div>
                 
@@ -259,18 +259,18 @@
                 	
                   <div class="col-md-2">
                     <label for="c_fname" class="text-black">Preco da compra <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_fname" name="c_fname">
+                    <input type="text" class="form-control" id="c_fname" name="precoCompraProduto">
                   </div>
                     
                      <div class="col-md-2">
                     <label for="c_fname" class="text-black">Preco da venda <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_fname" name="c_fname">
+                    <input type="text" class="form-control" id="c_fname" name="precoVendaProduto">
                   </div>
                     
                   
                   <div class="col-md-2">
                     <label for="c_lname" class="text-black">Quantidade <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_lname" name="c_lname">
+                    <input type="text" class="form-control" id="c_lname" name="quantidadeProduto">
                   </div>
                   
                   <div class="col-md-6">

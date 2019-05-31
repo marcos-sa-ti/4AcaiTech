@@ -1,18 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import connection.ConnectionFactory;
 import data.ProdutoData;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.servlet.http.Part;
 
 /**
  *
@@ -24,14 +21,21 @@ public class ProdutoDAO {
         try {
             Connection connection = new ConnectionFactory().getConnection();
 
-            String sqlProduto = "INSERT INTO `produto`(`nome`, `categoria`, `descricao`, 'preco', `ano_lancamento`, `quantidade`) VALUES (?,?,?,?,?,?)";
+            String sqlProduto = "INSERT INTO `produto`(`nome`, `descricao`, 'precovenda', `precocompra`, `quantidade`, `imagem` ) VALUES (?,?,?,?,?,?)";
             PreparedStatement pstmtProduto = connection.prepareStatement(sqlProduto);
+            
+            
             pstmtProduto.setString(1, p.getNome());
-            pstmtProduto.setInt(2, p.getCategoria());
-            pstmtProduto.setString(3, p.getDescricao());
-            pstmtProduto.setInt(4, p.getPreco());
-            pstmtProduto.setInt(5, p.getAnoLancamento());
-            pstmtProduto.setInt(6, p.getQuantidade());
+            pstmtProduto.setString(2, p.getDescricao());
+            pstmtProduto.setInt(3, p.getPrecoVenda());
+            pstmtProduto.setInt(4, p.getPrecoCompra());
+            pstmtProduto.setInt(5, p.getQuantidade());
+            
+            InputStream is = part.getInputStream();
+            pstmtProduto.setBlob(6,is);
+            
+            
+            
             int deuCertoSQL = pstmtProduto.executeUpdate();
 
             if (deuCertoSQL == 1) {
@@ -60,10 +64,7 @@ public class ProdutoDAO {
                 p.setId(rs.getInt("ID"));
                 p.setNome(rs.getString("NOME"));
                 p.setDescricao(rs.getString("DESCRICAO"));
-                p.setPreco(rs.getInt("PRECO"));
                 p.setQuantidade(rs.getInt("QUANTIDADE"));
-                p.setCategoria(rs.getInt("CATEGORIA"));
-                p.setAnoLancamento(rs.getInt("ANO_LANCAMENTO"));
                 listaProdutos.add(p);
 
             }
@@ -89,11 +90,7 @@ public class ProdutoDAO {
                 p.setId(rs.getInt("ID"));
                 p.setNome(rs.getString("NOME"));
                 p.setDescricao(rs.getString("DESCRICAO"));
-                p.setPreco(rs.getInt("PRECO"));
                 p.setQuantidade(rs.getInt("QUANTIDADE"));
-                p.setCategoria(rs.getInt("CATEGORIA"));
-                p.setAnoLancamento(rs.getInt("ANO_LANCAMENTO"));
-
                 listaProdutos.add(p);
 
             }
@@ -117,10 +114,7 @@ public class ProdutoDAO {
                 p.setId(rs.getInt("ID"));
                 p.setNome(rs.getString("NOME"));
                 p.setDescricao(rs.getString("DESCRICAO"));
-                p.setPreco(rs.getInt("PRECO"));
                 p.setQuantidade(rs.getInt("QUANTIDADE"));
-                p.setCategoria(rs.getInt("CATEGORIA"));
-                p.setAnoLancamento(rs.getInt("ANO_LANCAMENTO"));
                
 
             }
@@ -140,10 +134,7 @@ public class ProdutoDAO {
             String altProduto = "UPDATE `produto` SET `nome`=?,`categoria`=?,`descricao`=?,`preco`=?,`ano_lancamento`=?,`quantidade`=? WHERE `id`= ?";
             PreparedStatement pstmtProduto = connection.prepareStatement(altProduto);
             pstmtProduto.setString(1, p.getNome());
-            pstmtProduto.setInt(2, p.getCategoria());
             pstmtProduto.setString(3, p.getDescricao());
-            pstmtProduto.setInt(4, p.getPreco());
-            pstmtProduto.setInt(5, p.getAnoLancamento());
             pstmtProduto.setInt(6, p.getQuantidade());
             pstmtProduto.setInt(7, p.getId());
 

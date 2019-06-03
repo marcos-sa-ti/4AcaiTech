@@ -9,6 +9,8 @@ import dao.ProdutoDAO;
 import data.ProdutoData;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,19 +18,28 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author murilo.aaraujo
  */
-public class cadastrarProdutoConsole {
+@WebServlet(name = "cadastrarConsole", urlPatterns = {"/cadastrarConsole"})
+public class cadastrarProdutoConsole extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProdutoData p = new ProdutoData();
         p.setNome(request.getParameter("nomeProduto"));
 
-        p.setDescricao(request.getParameter("descricao"));
+        p.setDescricao(request.getParameter("descricaoProduto"));
         
-        p.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+        p.setQuantidade(Integer.parseInt(request.getParameter("quantidadeProduto")));
+        
+        p.setPrecoVenda(Integer.parseInt(request.getParameter("precoVendaProduto")));
+        
+        p.setPrecoCompra(Integer.parseInt(request.getParameter("precoCompraProduto")));
+        
+        p.setAnoLancamento(request.getParameter("anolancamentoProduto"));
+        
+        p.setCategoria(request.getParameter("categoriaProduto"));
         
         ProdutoDAO dao = new ProdutoDAO();
 
-        boolean deuCerto = dao.cadastraProduto(p);
+        boolean deuCerto = dao.cadastraProdutoConsole(p);
 
         request.setAttribute("retorno", "ok");
         String MensagemDeRetorno = null;
@@ -39,6 +50,6 @@ public class cadastrarProdutoConsole {
             MensagemDeRetorno = "Houve um erro ao cadastrar o produto: '" + request.getParameter("nomeProduto") + "'.";
         }
         request.setAttribute("retornoMensagem", MensagemDeRetorno);
-        request.getRequestDispatcher("productConsole.html").forward(request, response);
+        request.getRequestDispatcher("productConsole.jsp").forward(request, response);
     }
 }

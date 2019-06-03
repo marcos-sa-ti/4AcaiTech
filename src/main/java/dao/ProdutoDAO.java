@@ -16,12 +16,12 @@ import javax.servlet.http.Part;
  * @author Android
  */
 public class ProdutoDAO {
-    public boolean cadastraProduto(ProdutoData p) {
+    public boolean cadastraProdutoJogo(ProdutoData p) {
         boolean deuCerto = false;
         try {
             Connection connection = new ConnectionFactory().getConnection();
 
-            String sqlProduto = "INSERT INTO `produto`(`nome`, `descricao`, 'precovenda', `precocompra`, `quantidade`, `imagem` ) VALUES (?,?,?,?,?,?)";
+            String sqlProduto = "INSERT INTO `produto`(`nome`, `descricao`, 'precovenda', `precocompra`, `quantidade`, ) VALUES (?,?,?,?,?,?)";
             PreparedStatement pstmtProduto = connection.prepareStatement(sqlProduto);
             
             
@@ -57,6 +57,48 @@ public class ProdutoDAO {
 
     }
 
+    public boolean cadastraProdutoConsole(ProdutoData p) {
+        boolean deuCerto = false;
+        try {
+            Connection connection = new ConnectionFactory().getConnection();
+
+            String sqlProduto = "INSERT INTO `produto`(nome, descricao, precovenda, precocompra, quantidade, anolancamento, categoria) VALUES (?,?,?,?,?,?,?)";
+            PreparedStatement pstmtProduto = connection.prepareStatement(sqlProduto);
+            
+            
+            pstmtProduto.setString(1, p.getNome());
+            pstmtProduto.setString(2, p.getDescricao());
+            pstmtProduto.setInt(3, p.getPrecoVenda());
+            pstmtProduto.setInt(4, p.getPrecoCompra());
+            pstmtProduto.setInt(5, p.getQuantidade());
+            pstmtProduto.setString(6, p.getAnoLancamento());
+            pstmtProduto.setString(7, p.getCategoria());
+            
+            
+            /* Corrigir essa porra depois 
+            
+            
+            InputStream is = part.getInputStream();
+            pstmtProduto.setBlob(6,is);
+            
+            
+            */
+            
+            
+            int deuCertoSQL = pstmtProduto.executeUpdate();
+
+            if (deuCertoSQL == 1) {
+                deuCerto = true;
+            } else {
+                deuCerto = false;
+            }
+            connection.close();
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Erro no banco de dados cadastraProduto: " + ex);
+        }
+        return deuCerto;
+
+    }
     public ArrayList<ProdutoData> getProdutos() {
         ArrayList<ProdutoData> listaProdutos = new ArrayList<>();
         try {

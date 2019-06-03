@@ -90,7 +90,7 @@
                             <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 
                                 <li>
-                                    <a href="shoping-cart.html" class="zmdi zmdi-shopping-cart">
+                                    <a href="shoping-cart.jsp" class="zmdi zmdi-shopping-cart">
 
                                     </a>
                                 </li>
@@ -101,7 +101,7 @@
                             <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 
                                 <li>
-                                    <a href="login.html" class="zmdi zmdi-account">
+                                    <a href="login.jsp" class="zmdi zmdi-account">
 
                                     </a>
                                 </li>
@@ -119,7 +119,7 @@
             <div class="wrap-header-mobile">
                 <!-- Logo moblie -->		
                 <div class="logo-mobile">
-                    <a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+                    <a href="index.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
                 </div>
 
                 <!-- Icon header -->
@@ -178,9 +178,9 @@
 
                 <ul class="main-menu-m">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.jsp">Home</a>
                         <ul class="sub-menu-m">
-                            <li><a href="index.html">Homepage 1</a></li>
+                            <li><a href="index.jsp">Homepage 1</a></li>
                             <li><a href="home-02.html">Homepage 2</a></li>
                             <li><a href="home-03.html">Homepage 3</a></li>
                         </ul>
@@ -190,23 +190,23 @@
                     </li>
 
                     <li>
-                        <a href="product.html">Shop</a>
+                        <a href="product.jsp">Shop</a>
                     </li>
 
                     <li>
-                        <a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+                        <a href="shoping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
                     </li>
 
                     <li>
-                        <a href="blog.html">Blog</a>
+                        <a href="blog.jsp">Blog</a>
                     </li>
 
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.jsp">About</a>
                     </li>
 
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.jsp">Contact</a>
                     </li>
                 </ul>
             </div>

@@ -9,6 +9,8 @@ public class ProdutoData {
     private int PrecoVenda;
     private int PrecoCompra;
     private int Quantidade;
+    private String AnoLancamento;
+    private String Categoria;
       
 
     public int getId() {
@@ -62,5 +64,23 @@ public class ProdutoData {
     public void setBlob(int i, InputStream is) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public String getAnoLancamento() {
+        return AnoLancamento;
+    }
+
+    public void setAnoLancamento(String AnoLancamento) {
+        this.AnoLancamento = AnoLancamento;
+    }
+
+    public String getCategoria() {
+        return Categoria;
+    }
+
+    public void setCategoria(String Categoria) {
+        this.Categoria = Categoria;
+    }
+    
+    
     
 }

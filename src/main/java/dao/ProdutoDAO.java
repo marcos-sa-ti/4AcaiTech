@@ -21,7 +21,7 @@ public class ProdutoDAO {
         try {
             Connection connection = new ConnectionFactory().getConnection();
 
-            String sqlProduto = "INSERT INTO `produto`(`nome`, `descricao`, 'precovenda', `precocompra`, `quantidade`, ) VALUES (?,?,?,?,?,?)";
+            String sqlProduto = "INSERT INTO `produto`(nome, descricao, precovenda, precocompra, quantidade, categoria, genero, anolancamento ) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement pstmtProduto = connection.prepareStatement(sqlProduto);
             
             
@@ -30,17 +30,9 @@ public class ProdutoDAO {
             pstmtProduto.setInt(3, p.getPrecoVenda());
             pstmtProduto.setInt(4, p.getPrecoCompra());
             pstmtProduto.setInt(5, p.getQuantidade());
-            
-            
-            /* Corrigir essa porra depois 
-            
-            
-            InputStream is = part.getInputStream();
-            pstmtProduto.setBlob(6,is);
-            
-            
-            */
-            
+            pstmtProduto.setString(6, p.getCategoria());
+            pstmtProduto.setString(7, p.getGenero());
+            pstmtProduto.setString(8, p.getAnoLancamento());
             
             int deuCertoSQL = pstmtProduto.executeUpdate();
 
@@ -57,6 +49,38 @@ public class ProdutoDAO {
 
     }
 
+    public boolean cadastraProdutoAcessorio(ProdutoData p) {
+        boolean deuCerto = false;
+        try {
+            Connection connection = new ConnectionFactory().getConnection();
+
+            String sqlProduto = "INSERT INTO `produto`(nome, descricao, precovenda, precocompra, quantidade, categoria) VALUES (?,?,?,?,?,?)";
+            PreparedStatement pstmtProduto = connection.prepareStatement(sqlProduto);
+            
+            
+            pstmtProduto.setString(1, p.getNome());
+            pstmtProduto.setString(2, p.getDescricao());
+            pstmtProduto.setInt(3, p.getPrecoVenda());
+            pstmtProduto.setInt(4, p.getPrecoCompra());
+            pstmtProduto.setInt(5, p.getQuantidade());
+            pstmtProduto.setString(6, p.getCategoria());
+           
+            
+            int deuCertoSQL = pstmtProduto.executeUpdate();
+
+            if (deuCertoSQL == 1) {
+                deuCerto = true;
+            } else {
+                deuCerto = false;
+            }
+            connection.close();
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Erro no banco de dados cadastraProduto: " + ex);
+        }
+        return deuCerto;
+
+    }
+    
     public boolean cadastraProdutoConsole(ProdutoData p) {
         boolean deuCerto = false;
         try {

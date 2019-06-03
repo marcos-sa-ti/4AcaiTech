@@ -50,7 +50,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/logo1.png" alt="IMG-LOGO">
+						<img href="index.html" src="images/icons/logo1.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -115,7 +115,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="/mavenproject1/index.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -225,85 +225,97 @@
 	</header>
 
 
+
+	<!-- Slider -->
 	<br>
- 	<br>
-   	<br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   
 
-
-	<!-- Banner -->
-	<div class="site-section">
+<div class="site-section">
       <div class="container">
-      <br><br><br><br>
         <div class="row">
+          <div class="col-md-10">
+            <h2 class="h3 mb-3 text-black">Gerenciamento de Produtos</h2><br>
+          </div>
+          <div class="form-group row col-md-2">
+                  <div class="col-lg-12">
+                    <input onClick="location.href='cadastrarAcessorio.jsp';" type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" value="Adicionar Produto">
+                        </div>
+        </div>
           
-          <div class="col-md-12">
+          
 
-              <form  name="formularioGame" id="formularioGame" action="${pageContext.request.contextPath}/cadastrarProduto" enctype="multipart/form-data" method="post">
-              
-              <div class="p-3 p-lg-5 border">
-			    <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_subject" class="text-black">Nome </label>
-                    <input type="text" class="form-control" id="nomeProduto" name="nomeProduto">
-                  </div>
-                </div>
-                
-                      <div class="form-group row">
-                  <div class="col-md-12">
-                    <label>Descricao </label>
-                    <textarea name="descricaoProduto" id="descricaoProduto" cols="30" rows="7" class="form-control"></textarea>
-                 </div>
-                </div>
-                
-                <div class="form-group row">
-                	
-                  <div class="col-md-2">
-                    <label for="c_fname" class="text-black">Preco da compra <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="precoCompraProduto" name="precoCompraProduto">
-                  </div>
+		<div class="site-blocks-table col-md-12">
+
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="product-thumbnail"><input type="text" class="form-control border-0" placeholder="Pesquisar"></th>
+                    <th class="product-thumbnail">Preco</th>
+                    <th class="product-thumbnail">Estoque</th>
+                    <th class="product-thumbnail">Acoes</th>
                     
-                     <div class="col-md-2">
-                    <label for="c_fname" class="text-black">Preco da venda <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="precoVendaProduto" name="precoVendaProduto">
-                  </div>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="product-name">
+                      <h2 class="h5 text-black">Jogo 1</h2>
+                    </td>
+                    <td>
+
+                    <h2 class="h5 text-black">R$ 10,00</h2>
+               
+               
+                    </td>
+                     <td>
+
+                    <h2 class="h5 text-black">1</h2>
+               
+               
+                    </td>
                     
+                    <td><a href="#" class="zmdi zmdi-delete"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="zmdi zmdi-edit">
+
+                     </a></td>
+                  </tr>
                   
-                  <div class="col-md-2">
-                    <label for="c_lname" class="text-black">Quantidade <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="quantidadeProduto" name="quantidadeProduto">
-                  </div>
-                  
-                  <div class="col-md-2">
-                    <label for="c_fname" class="text-black">Gênero <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="generoJogo" name="generoJogo">
-                  </div>
-                  <div class="col-md-2">
-                    <label for="c_fname" class="text-black">AnoLançamento <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="anolancamentoProduto" name="anolancamentoProduto">
-                  </div><br>
-                <div class="col-md-2">
-                    <input type="file" class="btn btn-primary btn-lg btn-block" value="Procurar foto">
-                  </div>
-                  <input type="hidden" id="categoriaProduto" name="categoriaProduto" value="Game"/>
-                </div>
-                <br><br>
-          <div class="form-group row">
-                  <div class="col-lg-4">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Cadastrar">
-                  </div>
-                </div>
-                
-                
-                
-				  
-           
-              
-            </form>
-          </div>
-		  
-			            
-          </div>
-		  
+                     <tr>
+                    <td class="product-name">
+                      <h2 class="h5 text-black">Jogo 2</h2>
+                    </td>
+                    <td>
+
+		<h2 class="h5 text-black">R$ 10,00</h2>
+                   
+               
+               
+                    </td>
+                     <td>
+
+                    <h2 class="h5 text-black">1</h2>
+               
+               
+                    </td>
+                    <td><a href="#" class="zmdi zmdi-delete"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                     <a href="#" class="zmdi zmdi-edit"></td>
+                  </tr>
+
+               
+                </tbody>
+              </table>
+            </div>
+			
+
+        
         </div>
       </div>
     </div>
@@ -313,7 +325,11 @@
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br>
+<br><br><br>
 
    
 	<!-- Footer -->
@@ -466,3 +482,4 @@
 
 </body>
 </html>
+

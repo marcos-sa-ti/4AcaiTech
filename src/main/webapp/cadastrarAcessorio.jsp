@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Home</title>
+	<title>Cadastrar Console</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -238,19 +238,19 @@
           
           <div class="col-md-12">
 
-              <form  name="formularioGame" id="formularioGame" action="${pageContext.request.contextPath}/cadastrarProduto" enctype="multipart/form-data" method="post">
+              <form action="${pageContext.request.contextPath}/cadastrarAcessorio" name="formularioAcessorio" id="formularioAcessorio" method="post">
               
               <div class="p-3 p-lg-5 border">
 			    <div class="form-group row">
                   <div class="col-md-12">
-                    <label for="c_subject" class="text-black">Nome </label>
+                    <label>Nome <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="nomeProduto" name="nomeProduto">
                   </div>
                 </div>
                 
                       <div class="form-group row">
                   <div class="col-md-12">
-                    <label>Descricao </label>
+                    <label>Descricao <span class="text-danger">*</span></label>
                     <textarea name="descricaoProduto" id="descricaoProduto" cols="30" rows="7" class="form-control"></textarea>
                  </div>
                 </div>
@@ -258,33 +258,25 @@
                 <div class="form-group row">
                 	
                   <div class="col-md-2">
-                    <label for="c_fname" class="text-black">Preco da compra <span class="text-danger">*</span></label>
+                    <label>Preco da compra <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="precoCompraProduto" name="precoCompraProduto">
                   </div>
                     
                      <div class="col-md-2">
-                    <label for="c_fname" class="text-black">Preco da venda <span class="text-danger">*</span></label>
+                    <label>Preco da venda <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="precoVendaProduto" name="precoVendaProduto">
                   </div>
                     
                   
                   <div class="col-md-2">
-                    <label for="c_lname" class="text-black">Quantidade <span class="text-danger">*</span></label>
+                    <label>Quantidade <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="quantidadeProduto" name="quantidadeProduto">
                   </div>
-                  
-                  <div class="col-md-2">
-                    <label for="c_fname" class="text-black">Gênero <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="generoJogo" name="generoJogo">
-                  </div>
-                  <div class="col-md-2">
-                    <label for="c_fname" class="text-black">AnoLançamento <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="anolancamentoProduto" name="anolancamentoProduto">
-                  </div><br>
+                  <br>
                 <div class="col-md-2">
                     <input type="file" class="btn btn-primary btn-lg btn-block" value="Procurar foto">
                   </div>
-                  <input type="hidden" id="categoriaProduto" name="categoriaProduto" value="Game"/>
+                  <input type="hidden" id="categoriaProduto" name="categoriaProduto" value="Acessorio"/>
                 </div>
                 <br><br>
           <div class="form-group row">
@@ -292,12 +284,6 @@
                     <input type="submit" class="btn btn-primary btn-lg btn-block" value="Cadastrar">
                   </div>
                 </div>
-                
-                
-                
-				  
-           
-              
             </form>
           </div>
 		  
@@ -466,3 +452,4 @@
 
 </body>
 </html>
+

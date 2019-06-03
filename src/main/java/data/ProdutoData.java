@@ -11,7 +11,7 @@ public class ProdutoData {
     private int Quantidade;
     private String AnoLancamento;
     private String Categoria;
-      
+    private String Genero;  
 
     public int getId() {
         return Id;
@@ -79,6 +79,14 @@ public class ProdutoData {
 
     public void setCategoria(String Categoria) {
         this.Categoria = Categoria;
+    }
+
+    public String getGenero() {
+        return Genero;
+    }
+
+    public void setGenero(String Genero) {
+        this.Genero = Genero;
     }
     
     

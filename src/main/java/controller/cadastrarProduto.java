@@ -20,109 +20,59 @@ import javax.servlet.http.Part;
 /**
  *
  * @author marcos.sbrito2
- * 
- * 
- * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO 
- * * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO 
- * * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO 
- * * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO 
- * * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO 
- * * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO 
- * * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO 
- * * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO 
+ *
+ *
+ * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO * ESSA É
+ * UMA CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO * ESSA É UMA
+ * CLASSE TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO * ESSA É UMA CLASSE
+ * TESTE PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO * ESSA É UMA CLASSE TESTE
+ * PARA SALVAR SOMENTE A IMAGEM DE UM PRODUTO * ESSA É UMA CLASSE TESTE PARA
+ * SALVAR SOMENTE A IMAGEM DE UM PRODUTO * ESSA É UMA CLASSE TESTE PARA SALVAR
+ * SOMENTE A IMAGEM DE UM PRODUTO * ESSA É UMA CLASSE TESTE PARA SALVAR SOMENTE
+ * A IMAGEM DE UM PRODUTO
  */
-
-
-
-
-@WebServlet (name="cadastrarProduto" , urlPatterns = {"/cadastrarProduto"})
+@WebServlet(name = "cadastrarProduto", urlPatterns = {"/cadastrarProduto"})
 @MultipartConfig(maxFileSize = 16177216)
 public class cadastrarProduto extends HttpServlet {
-    
+
     PrintWriter saida;
-    
-    
+
     @Override
-     protected void doPost (HttpServletRequest request , HttpServletResponse response)
-          throws ServletException, IOException {
-     
-         ProdutoData novoproduto = new ProdutoData();
-         
-         
-         novoproduto.setNome(request.getParameter("nomeProduto"));
-         novoproduto.setNome(request.getParameter("descricaoProduto"));
-         novoproduto.setPrecoCompra(Integer.parseInt(request.getParameter("precoCompraProduto")));
-         novoproduto.setPrecoVenda(Integer.parseInt(request.getParameter("precoVendaProduto")));
-         novoproduto.setPrecoVenda(Integer.parseInt(request.getParameter("quantidadeProduto")));
-         saida = response.getWriter();
-         Part part = request.getPart("fotoqueoclienteescolheu");
-         
-         
-         
-         
-         /* Código que salvar somente a imagem do produto
-         /* Código que salvar somente a imagem do produto
-         /* Código que salvar somente a imagem do produto
-         /* Código que salvar somente a imagem do produto
-        
-         
-         response.setContentType("text/html;charset=UTF-8");
-         saida = response.getWriter();
-         int resultado = 0;
-         Part part = request.getPart("fotoqueoclienteescolheu");
-         if (part != null){
-         try{
-         Connection conexao = new ConnectionFactory().getConnection();
-         PreparedStatement ps = conexao.prepareStatement("INSERT INTO produto(imagem) VALUES (?)");
-         InputStream is = part.getInputStream();
-         
-         
-         
-         
-         ps.setBlob(1, is);
-         resultado = ps.executeUpdate();
-         if (resultado > 0 ){
-         response.sendRedirect("/mavenproject1/index.jsp");
-         }
-         else{
-         response.sendRedirect("/mavenproject1/cadastrarProduto.jsp?message=Some+Error+Ocurred");
-         }
-         
-         }
-         
-         catch (Exception e){
-                 saida.println(e);
-                 }
-       
-             
-         }
-         
-         
-         
-     
-     };
-         
-         
-         
-    */
-    
-    ProdutoDAO dao = new ProdutoDAO();
-    
-    boolean deuCerto = dao.cadastraProduto(novoproduto);
-    request.setAttribute("retorno", "ok");
-    
-    String mensagemRetorno = null;
-    
-    if (deuCerto == true){
-    mensagemRetorno = "Produto: "+request.getParameter("nomeProduto")+ " cadastrado com sucesso! "; 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        ProdutoData p = new ProdutoData();
+
+        p.setNome(request.getParameter("nomeProduto"));
+
+        p.setDescricao(request.getParameter("descricaoProduto"));
+
+        p.setQuantidade(Integer.parseInt(request.getParameter("quantidadeProduto")));
+
+        p.setPrecoVenda(Integer.parseInt(request.getParameter("precoVendaProduto")));
+
+        p.setPrecoCompra(Integer.parseInt(request.getParameter("precoCompraProduto")));
+
+        p.setAnoLancamento(request.getParameter("anolancamentoProduto"));
+
+        p.setCategoria(request.getParameter("categoriaProduto"));
+
+        p.setGenero(request.getParameter("generoJogo"));
+
+        ProdutoDAO dao = new ProdutoDAO();
+
+        boolean deuCerto = dao.cadastraProdutoJogo(p);
+        request.setAttribute("retorno", "ok");
+
+        String mensagemRetorno = null;
+
+        if (deuCerto == true) {
+            mensagemRetorno = "Produto: " + request.getParameter("nomeProduto") + " cadastrado com sucesso! ";
+        } else {
+            mensagemRetorno = "Houve um erro ao cadastrar o produto: " + request.getParameter("nomeProduto") + " ";
+        }
+        request.setAttribute("mensagemRetorno", mensagemRetorno);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
+
     }
-    else {
-    mensagemRetorno = "Houve um erro ao cadastrar o produto: "+ request.getParameter("nomeProduto")+" ";
-    }
-    request.setAttribute("mensagemRetorno", mensagemRetorno);
-    request.getRequestDispatcher("/index.jsp").forward(request,response);
-         
-         
-         
-}
 }

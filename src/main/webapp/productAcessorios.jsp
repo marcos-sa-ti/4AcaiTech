@@ -58,7 +58,7 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="index.jsp">Home</a>
 							</li>
                      
                      <li>
@@ -66,7 +66,7 @@
 							</li>
                      
                      <li>
-								<a href="Produtos.html">Produtos</a>
+								<a href="listProdutoAcessorio.jsp">Produtos</a>
 							</li>
 
 
@@ -83,7 +83,7 @@
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							
                      <li>
-                     <a href="shoping-cart.html" class="zmdi zmdi-shopping-cart">
+                     <a href="shoping-cart.jsp" class="zmdi zmdi-shopping-cart">
 
                      </a>
                       </li>
@@ -94,7 +94,7 @@
                   <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 							
                      <li>
-                     <a href="login.html" class="zmdi zmdi-account">
+                     <a href="login.jsp" class="zmdi zmdi-account">
 
                      </a>
                       </li>

@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -253,65 +255,32 @@
           
 
 		<div class="site-blocks-table col-md-12">
-
               <table class="table table-bordered">
                 <thead>
                   <tr>
                     <th class="product-thumbnail"><input type="text" class="form-control border-0" placeholder="Pesquisar"></th>
                     <th class="product-thumbnail">Preco</th>
                     <th class="product-thumbnail">Estoque</th>
-                    <th class="product-thumbnail">Acoes</th>
+                    <th class="product-thumbnail">Ações</th>
                     
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                        <c:forEach var="produto" items="${listaP}">
+                    <tr class="">
                     <td class="product-name">
-                      <h2 class="h5 text-black">Jogo 1</h2>
+                        <c:out value="${produto.nome}"/>
                     </td>
                     <td>
-
-                    <h2 class="h5 text-black">R$ 10,00</h2>
-               
-               
-                    </td>
-                     <td>
-
-                    <h2 class="h5 text-black">1</h2>
-               
-               
-                    </td>
-                    
-                    <td><a href="#" class="zmdi zmdi-delete"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="zmdi zmdi-edit">
-
-                     </a></td>
-                  </tr>
-                  
-                     <tr>
-                    <td class="product-name">
-                      <h2 class="h5 text-black">Jogo 2</h2>
+                        <c:out value="${produto.precoVenda}"/>
                     </td>
                     <td>
-
-		<h2 class="h5 text-black">R$ 10,00</h2>
-                   
-               
-               
+                        <c:out value="${produto.quantidade}"/>
                     </td>
-                     <td>
-
-                    <h2 class="h5 text-black">1</h2>
-               
-               
-                    </td>
-                    <td><a href="#" class="zmdi zmdi-delete"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                     <a href="#" class="zmdi zmdi-edit"></td>
-                  </tr>
-
-               
+                        </c:forEach>
                 </tbody>
               </table>
+                    </form>
             </div>
 			
 

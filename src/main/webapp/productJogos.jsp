@@ -66,7 +66,7 @@
 							</li>
                      
                      <li>
-								<a href="/mavenproject1/produtos.jsp">Produtos</a>
+								<a href="/mavenproject1/listaProduto.jsp">Produtos</a>
 							</li>
 
 

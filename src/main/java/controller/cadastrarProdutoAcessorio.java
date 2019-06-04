@@ -50,6 +50,6 @@ public class cadastrarProdutoAcessorio extends HttpServlet{
             MensagemDeRetorno = "Houve um erro ao cadastrar o produto: '" + request.getParameter("nomeProduto") + "'.";
         }
         request.setAttribute("retornoMensagem", MensagemDeRetorno);
-        request.getRequestDispatcher("productAcessorios.html").forward(request, response);
+        request.getRequestDispatcher("productAcessorios.jsp").forward(request, response);
     }
 }

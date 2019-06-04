@@ -128,15 +128,14 @@ public class ProdutoDAO {
         try {
             Connection connection = new ConnectionFactory().getConnection();
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM `produto` order by id desc");
+            ResultSet rs = stmt.executeQuery("SELECT nome, precovenda, quantidade FROM produto");
 
             while (rs.next()) {
                 ProdutoData p = new ProdutoData();
 
-                p.setId(rs.getInt("ID"));
-                p.setNome(rs.getString("NOME"));
-                p.setDescricao(rs.getString("DESCRICAO"));
-                p.setQuantidade(rs.getInt("QUANTIDADE"));
+                p.setNome(rs.getString("nome"));
+                p.setDescricao(rs.getString("precovenda"));
+                p.setQuantidade(rs.getInt("quantidade"));
                 listaProdutos.add(p);
 
             }
